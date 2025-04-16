@@ -8,21 +8,21 @@
 
 @font-face {
     font-family: "Nexa";
-    src: url("assets/Nexa\ Light.otf");
+    src: url("assets/fonts/Nexa\ Light.otf");
     font-weight: 300;
     font-style: normal;    
 }
 
 @font-face {
     font-family: "Nexa";
-    src: url("assets/Nexa\ Bold.otf");
+    src: url("assets/fonts/Nexa\ Bold.otf");
     font-weight: 700;
     font-style: normal;    
 }
 
 @font-face {
     font-family: "Nexa";
-    src: url("assets/nexaregular.otf");
+    src: url("assets/fonts/nexaregular.otf");
     font-weight: 400;
     font-style: normal;    
 }
@@ -44,7 +44,7 @@ form{
     gap: 12px;
 
     button{
-        background: linear-gradient(90deg, #968FF8 0%, #F1D3F9 100%) ;
+        background: linear-gradient(90deg, #c111d1 0%, #35085f 100%) ;
     }
 }
 
@@ -100,6 +100,7 @@ p{
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 .esquerda, .direita{
@@ -109,6 +110,7 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .formLogin, .facaLogin, .formCadastro, .facaCadastro{
@@ -126,6 +128,15 @@ p{
 
 .card::after{
     width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url(assets/img/background-gradient-lights.jpg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
 }
 
 /*LOGIN ACTIVE*/
