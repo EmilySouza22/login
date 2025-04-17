@@ -73,6 +73,7 @@ button{
     color: rgba(0 0 0 / .8);
     padding: 16px;
     transition: all .3s;
+    border: 1px solid rgba(0, 0, 0, 0.8)
 }
 
 button:hover{
@@ -129,12 +130,21 @@ p{
     position: absolute;
 
     h2{
-        color: rgba(0 0 0 / 0.7)
+        color: rgba(0 0 0 / 0.7);
+        line-height: 55px;
     }
-
+    p{
+        color: rgba(0 0 0 / 0.7);
+    }
     button{
-        background-color: rgba(255 255 255 / 0.2);
-        border: 2px solid rgba(0, 0, 0, 0.8)
+        color:rgba(255, 255, 255, 0.8);
+        background-color: rgba(44, 44, 49);
+    }
+}
+
+.formLogin, .formCadastro{
+    button{
+        color: rgba(255, 255, 255, 0.8);
     }
 }
 
