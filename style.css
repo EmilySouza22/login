@@ -72,6 +72,11 @@ button{
     font-weight: 700;
     color: rgba(0 0 0 / .8);
     padding: 16px;
+    transition: all .3s;
+}
+
+button:hover{
+    transform: translateY(-2px);
 }
 
 p{
@@ -122,6 +127,15 @@ p{
 
 .facaLogin, .facaCadastro{
     position: absolute;
+
+    h2{
+        color: rgba(0 0 0 / 0.7)
+    }
+
+    button{
+        background-color: rgba(255 255 255 / 0.2);
+        border: 2px solid rgba(0, 0, 0, 0.8)
+    }
 }
 
 /*BACKGROUND MOVEL*/
@@ -139,7 +153,8 @@ p{
     z-index: 0;
 }
 
-/*LOGIN ACTIVE*/
+/*LOGIN 
+ACTIVE*/
 
 .card.loginActive .facaLogin{
     opacity: 0;
@@ -151,3 +166,74 @@ p{
     pointer-events: none;
 }
 
+.card.loginActive::after{
+    transform: translateX(50%);
+}
+
+.card.loginActive .facaCadastro{
+    transform: translateX(0);
+    transition: all 0.3s 0.3s;
+    opacity: 1;
+}
+
+.card.loginActive .formLogin{
+    transition: all 0.3s 0.3s;
+    opacity: 1;
+}
+
+
+/*CADASTRO 
+ACTIVE*/
+
+.card.cadastroActive .facaCadastro{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.cadastroActive .formLogin{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.cadastroActive::after{
+    transform: translateX(-50%);
+}
+
+.card.cadastroActive .facaLogin{
+    transform: translateX(0);
+    transition: all 0.3s 0.3s;
+    opacity: 1;
+}
+
+.card.cadastroActive .formCadastro{
+    transition: all 0.3s 0.3s;
+    opacity: 1;
+}
+
+
+/*TRANSITION*/
+
+.card::after{
+    transition: all 0.5s;
+}
+
+.facaCadastro{
+    transition: all 0.3s 0s;
+    transform: translateX(200%);
+    opacity: 0;
+}
+
+.formLogin{
+    opacity: 0;
+}
+
+
+.facaLogin{
+    transition: all 0.3s 0s;
+    transform: translateX(-200%);
+    opacity: 0;
+}
+
+.formCadastro{
+    opacity: 0;
+}
